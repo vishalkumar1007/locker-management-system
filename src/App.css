@@ -1,0 +1,191 @@
+/* LockerManagementSystem.css */
+
+body {
+  background-image: url('./assets/background_2.jpg');
+  background-size: cover; /* Ensures the image covers the entire element */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-attachment: fixed; /* Keeps the image fixed in place when scrolling */
+  display: flex;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+  padding: 0px 20px;
+  position: relative;
+  /* backdrop-filter: blur(15px); */
+  z-index: 1;
+}
+.locker_main_wrap{
+  backdrop-filter: blur(4px);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.locker_main{
+  z-index: 10;
+  width: 100%;
+  max-width: 750px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.header {
+  /* background-color: rgb(146, 24, 24); */
+  background-color: #282c3460;
+  border: 1px solid #373b42;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 30px;
+  color: white;
+  border-radius:10px ;
+  margin-top: 50px;
+}
+.header h1 {
+  text-align: center;
+}
+#created_by{
+  position: absolute;
+  bottom: 0px;
+  right:10px;
+  font-size: 9px;
+  padding: 4px 7px;
+  border-radius: 7px;
+  /* border: 1px solid #4a221a; */
+  color: #6d6d6dee;
+  font-weight: 500;
+  /* background-color: rgba(118, 69, 48, 0.416); */
+  /* backdrop-filter: blur(4px); */
+}
+
+.input-group {
+  /* background-color: darkgoldenrod; */
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.input-field {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100px;
+}
+
+.generate-button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.locker-management-system {
+  /* background-color: violet; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* box-sizing: border-box; */
+}
+
+.column-actions {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.action-button {
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #008CBA;
+  color: white;
+  cursor: pointer;
+}
+
+.output_title_of_grid{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #282c34;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+.grid-container {
+  /* background-color: indigo; */
+  display: grid;
+  gap: 10px;
+  margin: 20px 0px;
+  justify-content: center;
+  width: 100%;
+}
+
+.column-button {
+  padding: 10px;
+  background-color: rgb(0, 98, 255);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.column-button.selected {
+  background-color: green;
+}
+
+.modal {
+  background-color: rgb(161, 189, 56);
+  background-color: #282c34;
+  border: 1px solid #747474;
+  border-radius: 5px;
+  padding: 20px;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 400px;
+  box-shadow: 0px 0px 60px rgb(20, 20, 20);
+}
+.modal h3 {
+  /* background-color: violet; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.model_btns{
+  /* background-color: forestgreen; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-button {
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #6e45f4;
+  color: white;
+  cursor: pointer;
+  margin: 5px;
+}
+
+@media (max-width: 600px) {
+  .input-group {
+    flex-direction: column;
+  }
+
+  .action-button {
+    width: 100%;
+  }
+
+  .column-button {
+    width: 100%;
+  }
+}
