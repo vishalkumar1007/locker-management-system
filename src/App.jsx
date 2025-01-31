@@ -1,9 +1,10 @@
 import "./App.css"; // updated CSS file
 import Locker from "./components/Locker/Locker";
-import { useState, useEffect, Fragment, useMemo } from "react";
+import { useState, useEffect, useMemo } from "react";
 
 // Utility function to get stored value from local storage
 const getStoredValue = (key, defaultValue) => {
+  // const savedValue = localStorage.getItem(key);
   const savedValue = localStorage.getItem(key);
   return savedValue ? JSON.parse(savedValue) : defaultValue;
 };
@@ -74,11 +75,11 @@ const LockerManagementSystem = () => {
   const columnButtons = useMemo(() => {
     return Array.from({ length: columnCount }).map((_, colIndex) => (
       <button
-        className={`column-button ${colIndex === activeColumn ? "selected" : ""}`}
+        className={`column-button ${colIndex === activeColumn ? "selected" : "unselected"}`}
         key={colIndex}
-        onClick={() => setActiveColumn(colIndex)}
+        onClick={() => {setActiveColumn(colIndex===activeColumn?null:colIndex)}}
       >
-        Col {colIndex + 1}
+        Col {colIndex + 1}  
       </button>
     ));
   }, [columnCount, activeColumn]);
@@ -94,7 +95,7 @@ const LockerManagementSystem = () => {
   }, [lockerList]);
 
   return (
-    <Fragment>
+    <>
       <div className="locker_main_wrap"></div>
       <div className="locker_main">
         <div className="header">
@@ -106,7 +107,7 @@ const LockerManagementSystem = () => {
               value={inputRowCount}
               onChange={(e) => {
                 const value = parseInt(e.target.value);
-                if (value > 0) {
+                if (value >= 0) {
                   setInputRowCount(value);
                 }
               }}
@@ -118,7 +119,7 @@ const LockerManagementSystem = () => {
               value={inputColumnCount}
               onChange={(e) => {
                 const value = parseInt(e.target.value);
-                if (value > 0) {
+                if (value >= 0) {
                   setInputColumnCount(value);
                 }
               }}
@@ -201,7 +202,7 @@ const LockerManagementSystem = () => {
         </div>
         <p id="created_by">Developed By Vishal Kumar</p>
       </div>
-    </Fragment>
+    </>
   );
 };
 
